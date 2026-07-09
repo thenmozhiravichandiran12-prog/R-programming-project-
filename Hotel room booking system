@@ -1,0 +1,31 @@
+# Hotel Room Booking System
+
+hotel <- data.frame(
+  RoomNo = c(101, 102, 103, 104),
+  CustomerName = c("Thenmozhi", "Priya", "Karthik", "Anu"),
+  RoomType = c("Single", "Double", "Deluxe", "Suite"),
+  Days = c(2, 3, 1, 4),
+  PricePerDay = c(1000, 1500, 2500, 3500),
+  stringsAsFactors = FALSE
+)
+
+# Calculate Total Amount
+hotel$TotalAmount <- hotel$Days * hotel$PricePerDay
+
+# Display Details
+cat("========================================\n")
+cat("      HOTEL ROOM BOOKING SYSTEM\n")
+cat("========================================\n\n")
+
+print(hotel)
+
+cat("\n=========== BILL DETAILS ===========\n")
+
+for(i in 1:nrow(hotel))
+{
+  cat("\nCustomer Name :", hotel$CustomerName[i], "\n")
+  cat("Room Number   :", hotel$RoomNo[i], "\n")
+  cat("Room Type     :", hotel$RoomType[i], "\n")
+  cat("Days Stayed   :", hotel$Days[i], "\n")
+  cat("Total Amount  : Rs.", hotel$TotalAmount[i], "\n")
+}
